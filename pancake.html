@@ -1,322 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Top 5 Reasons Every American Over 50 Should Get Their Final Expense Coverage Today</title>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Top 5 Reasons Every American Over 50 Should Get Final Expense Coverage</title>
 
+  <!-- (Optional) your pixels go here exactly as-is -->
 
+  <style>
+    /* ------------------------------
+       Advertorial Style (Pets-Style)
+       ------------------------------ */
+    :root{
+      --ink:#111;          /* body text */
+      --muted:#555;        /* meta/byline */
+      --rule:#e6e6e6;      /* light rule */
+      --cta:#0aa34f;       /* green button */
+      --cta-dark:#088341;
+      --max: 760px;        /* article width */
+    }
 
-<!-- Offer JS -->
-<script async src="https://mm-uxrv.com/js/mm_2f1b778b-a559-4b02-89fa-78b304b58dca-78534927.js"></script>
+    /* Reset-ish */
+    * { box-sizing: border-box; }
+    html, body { height:100%; }
+    body {
+      margin:0;
+      color:var(--ink);
+      background:#fff;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      font-family: Georgia, 'Times New Roman', Times, serif; /* classic serif body */
+      line-height: 1.66;
+    }
+    img { max-width:100%; height:auto; display:block; }
+    a { color: inherit; }
 
+    /* Top brand bar (subtle) */
+    .brandbar{
+      display:flex; align-items:center; justify-content:center;
+      padding:10px 14px; border-bottom:1px solid var(--rule);
+      background:#fff;
+    }
+    .brandbar img { height:28px; width:auto; }
 
-<style>
-  :root{
-    --blue:#003f91;
-    --blue2:#006cb8;
-    --green:#00b050;
-    --ink:#0e1222;
-    --muted:#596070;
-    --bg:#ffffff;
-    --maxw:820px;
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0}
-  body{
-    font-family: "Georgia", "Times New Roman", serif;
-    background:var(--bg);
-    color:#111;
-    line-height:1.7;
-    -webkit-font-smoothing:antialiased;
-  }
+    /* Article wrapper */
+    .article{
+      width:min(100%, var(--max));
+      margin-inline:auto;
+      padding: clamp(14px, 3vw, 22px);
+    }
 
-  /* Progress bar like a magazine site */
-  .progress-wrap{position:fixed; top:0; left:0; right:0; z-index:60; height:4px; background:rgba(0,0,0,0.06)}
-  .progress{height:100%; width:0; background:linear-gradient(90deg,var(--blue2),var(--green)); transition:width .15s ease}
+    /* Kicker */
+    .kicker{
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 13px; letter-spacing:.12em; text-transform: uppercase;
+      color:#7a7a7a; margin: 6px 0 10px;
+    }
 
-  /* Header banner */
-  .sitebar{
-    background:linear-gradient(90deg,var(--blue),var(--blue2));
-    color:#fff; text-align:center; padding:10px 12px 14px;
-    position:sticky; top:4px; z-index:50;
-    box-shadow:0 8px 24px rgba(0,0,0,.18);
-    margin-top:4px;
-  }
-  .brand{
-    display:flex; align-items:center; justify-content:center; gap:10px;
-    font-weight:800; letter-spacing:.2px; font-size:18px;
-  }
-  .brand img{height:28px}
-  .live-pill{
-    display:inline-flex; align-items:center; gap:8px;
-    margin-top:8px; background:var(--green); color:#fff;
-    padding:6px 12px; border-radius:999px; font-size:14px;
-    box-shadow:0 0 0 3px rgba(255,255,255,.18) inset, 0 10px 24px rgba(0,176,80,.4);
-  }
-  .live-pill img{height:14px}
+    /* H1 + parenthetical like reference */
+    h1{
+      font-size: clamp(28px, 5.2vw, 42px);
+      line-height: 1.15;
+      margin: 6px 0 8px;
+      font-weight: 700;
+    }
+    .parenthetical{
+      font-style: italic;
+      font-size: clamp(15px, 3.5vw, 18px);
+      color:#222;
+      margin: 0 0 14px;
+    }
 
-  /* Article container */
-  .wrap{max-width:var(--maxw); margin:0 auto; padding:22px 18px}
-  .kicker{color:var(--blue2); font-weight:700; text-transform:uppercase; letter-spacing:.14em; font-size:12px}
-  h1{
-    font-size:42px; line-height:1.15; margin:8px 0 12px;
-    font-weight:800; color:#000;
-  }
-  .dek{font-size:18px; color:#222; margin:0 0 12px}
-  .meta{
-    color:var(--muted); font-size:14px; display:flex; gap:10px; align-items:center; flex-wrap:wrap;
-  }
-  .spon{background:#eef7ff; color:#0b3b7a; padding:2px 8px; border-radius:6px; font-weight:700; font-size:12px}
+    /* Meta row */
+    .meta{
+      display:flex; flex-wrap:wrap; gap:10px 18px;
+      align-items:center; color:var(--muted);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 14px;
+      margin: 6px 0 14px;
+    }
+    .meta .dot{ width:4px; height:4px; border-radius:50%; background:#c9c9c9; }
 
-  .hero{margin:18px 0 6px; border-radius:16px; overflow:hidden; box-shadow:0 16px 40px rgba(0,0,0,.15)}
-  .hero img{width:100%; display:block}
+    /* Rules */
+    .rule{ border:0; border-top:1px solid var(--rule); margin: 14px 0 18px; }
 
-  /* Body content */
-  article p{font-size:19px; margin:16px 0}
-  article .dropcap:first-letter{
-    float:left; font-size:64px; line-height:.9; padding-right:10px; padding-top:4px; color:var(--blue2); font-weight:800;
-  }
-  .pullquote{
-    border-left:4px solid var(--green); padding:6px 12px; margin:20px 0; font-style:italic; background:#f8fff6; border-radius:6px;
-  }
-  .inline-img{margin:16px 0; border-radius:12px; overflow:hidden; box-shadow:0 10px 26px rgba(0,0,0,.1)}
-  .inline-img img{width:100%; display:block}
-  h2.section{
-    font-size:26px; margin:26px 0 8px; line-height:1.25; color:#000; font-weight:800;
-    scroll-margin-top:90px;
-  }
-  ul.check{
-    list-style:none; padding-left:0; margin:10px 0 0;
-  }
-  ul.check li{
-    margin:6px 0; padding-left:28px; position:relative; font-size:18px;
-  }
-  ul.check li::before{
-    content:"✔"; position:absolute; left:0; top:0; color:var(--green); font-weight:800;
-  }
+    /* Hero */
+    .hero{
+      margin: 12px 0 18px;
+      border-radius: 10px; overflow: hidden;
+      box-shadow: 0 1px 10px rgba(0,0,0,.06);
+    }
 
-  /* CTA bars */
-  .cta{
-    background:linear-gradient(180deg,#ffffff,#f3fff7);
-    border:1px solid rgba(0,176,80,.25);
-    border-radius:14px; padding:14px; text-align:center;
-    box-shadow:0 12px 28px rgba(0,176,80,.18); margin:18px 0;
-  }
-  .cta .btn{
-    display:inline-block; background:var(--green); color:#fff; text-decoration:none; font-weight:800;
-    padding:12px 16px; border-radius:999px; box-shadow:0 0 0 4px rgba(0,176,80,.18) inset, 0 14px 30px rgba(0,176,80,.45);
-  }
-  .cta small{display:block; color:#2a2a2a; margin-top:6px}
-  .timer{
-    display:inline-block; margin-top:8px; font-weight:800; color:#cc0000; border:1px dashed #cc0000; padding:4px 8px; border-radius:8px;
-  }
+    /* Lede paragraph */
+    .lede{
+      font-size: clamp(17px, 3.8vw, 20px);
+      line-height: 1.7;
+      margin: 4px 0 14px;
+    }
 
-  /* Sticky bottom CTA */
-  .sticky{
-    position:sticky; bottom:12px; display:flex; justify-content:center; z-index:40; pointer-events:none;
-  }
-  .sticky a{
-    pointer-events:auto; background:linear-gradient(90deg,var(--green),#00c060);
-    color:#fff; text-decoration:none; padding:12px 16px; border-radius:999px; font-weight:900;
-    box-shadow:0 18px 38px rgba(0,176,80,.5);
-  }
+    /* Body text defaults (serif) already set; adjust sizes for mobile */
+    .article p{
+      font-size: clamp(16px, 3.6vw, 18px);
+      margin: 10px 0;
+    }
 
-  footer{border-top:1px solid #e7eef8; background:#fbfdff}
-  footer .foot{max-width:var(--maxw); margin:0 auto; padding:24px 18px; text-align:center; font-size:14px; color:#333}
+    /* CTA block (simple, centered) */
+    .cta{
+      margin: 18px auto;
+      text-align:center;
+      padding: 14px;
+      border:1px solid var(--rule);
+      border-radius: 12px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px; text-decoration:none; font-weight:700;
+      background: var(--cta); color:#fff; border-radius: 10px;
+      padding: 14px 18px; font-size: 18px; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      box-shadow: 0 6px 18px rgba(10,163,79,.22);
+      transition: transform .06s ease, background .2s ease;
+    }
+    .btn:active{ transform: translateY(1px); }
+    .btn:hover{ background: var(--cta-dark); }
 
-  /* Small caps caption */
-  figure{margin:18px 0}
-  figcaption{font-size:13px; color:#5a5f6e; text-align:center; margin-top:6px}
+    .note{
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color:#666; font-size: 13px; margin-top:8px;
+    }
 
-  @media (max-width:420px){
-    h1{font-size:34px}
-    article p{font-size:18px}
-  }
-</style>
+    /* Numbered reasons block */
+    .reasons{ margin-top: 8px; }
+    .reason{
+      margin: 18px 0;
+    }
+    .reason h3{
+      font-size: clamp(20px, 4.4vw, 26px);
+      line-height:1.25; margin: 0 0 8px; font-weight:700;
+    }
+    .reason .rimg{
+      border-radius: 10px; overflow:hidden; margin:10px 0 10px;
+      box-shadow: 0 1px 8px rgba(0,0,0,.05);
+    }
+
+    /* Pullquote style (optional) */
+    .pull{
+      border-left: 3px solid #ddd; padding-left: 12px;
+      color:#333; font-style: italic; margin: 12px 0;
+    }
+
+    /* Sticky bottom CTA (mobile-first) */
+    .sticky-cta{
+      position: fixed; left:0; right:0; bottom:0; z-index: 50;
+      background:#fff; border-top: 1px solid var(--rule);
+      padding: 10px 12px;
+    }
+    .sticky-cta .btn{ width:100%; border-radius: 12px; padding: 13px 16px; font-size: 17px; }
+
+    /* Space for sticky bar on very small screens */
+    .spacer{ height:68px; }
+
+    /* Wider screens: keep the same look, no clutter */
+    @media (min-width: 820px){
+      .sticky-cta{ display:none; }
+      .spacer{ display:none; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- Reading progress -->
-<div class="progress-wrap"><div class="progress" id="progress"></div></div>
-
-<!-- Site bar -->
-<header class="sitebar">
-  <div class="brand">
-    <img src="./bur.png" alt="Policy Benefits Logo">
-    <span>Policy Benefits Org.</span>
-  </div>
-  <div class="live-pill">
-    <img src="./images/live.png" alt="live">
-    <em><strong id="enrollment-count">22,578</strong> People Enrolled In Last 24 Hours!</em>
-  </div>
-</header>
-
-<!-- Article -->
-<main class="wrap">
-  <span class="kicker">Advertorial • Seniors & Family</span>
-  <h1>Top 5 Reasons Every American Over 50 Should Get Their Final Expense Coverage Today!</h1>
-  <p class="dek"><em>(Reason #5 may surprise you — and it’s the one most families miss.)</em></p>
-  <div class="meta">
-    <span>By Policy Benefits Editorial Team</span> •
-    <span>Updated <span id="today"></span></span> •
-    <span class="spon">Sponsored</span>
+  <!-- Simple brand strip like the reference uses -->
+  <div class="brandbar">
+    <!-- Use text if you don't want a logo image -->
+    <img src="bur.png" alt="Policy Benefits Org." />
   </div>
 
-  <div class="hero">
-    <img src="1.png" alt="Family finding peace of mind">
-  </div>
+  <article class="article">
+    <div class="kicker">Advertorial</div>
 
-  <!-- Top CTA -->
-  <div class="cta">
-    <a href="tel:+13214858035" class="btn" id="topCallBtn">📞 CALL (321) 485-8035</a>
-    <small>Free, No-Obligation Help — Licensed Representatives Are Standing By</small>
-    <span class="timer" id="t1">3:00</span>
-  </div>
+    <h1>Top 5 Reasons Every American Over 50 Should Get Their Final Expense Coverage Today</h1>
+    <p class="parenthetical">(Reason <strong>#5</strong> Will Shock You)</p>
 
-  <article>
-    <p class="dropcap">Most Americans don’t realize it — but the greatest financial burden their family will ever face may come the very moment they pass away.</p>
-    <p>We’re not talking about retirement plans, taxes, or mortgages. We’re talking about <strong>the cost of dying.</strong></p>
-    <p>Funeral homes don’t wait. Cemeteries don’t wait. Hospitals don’t wait. The bills come due instantly — at the exact time when your loved ones are at their weakest.</p>
-
-    <div class="inline-img">
-      <img src="2.png" alt="Funeral procession">
+    <div class="meta">
+      <span>By Policy Benefits Org. Editorial Team</span>
+      <span class="dot"></span>
+      <span>7–8 min read</span>
+      <span class="dot"></span>
+      <span><span id="enrolled">22,231</span> enrolled in last 24 hours</span>
     </div>
 
-    <p>That’s why Final Expense Coverage exists. It’s not about “insurance” in the traditional sense. It’s about giving your family <strong>dignity, relief, and breathing room</strong> when they’ll need it most.</p>
+    <hr class="rule" />
 
-    <h2 class="section" id="reason1">1) Funerals Aren’t Just Expensive… They’re Crushing</h2>
-    <p>The average funeral now costs <strong>$9,000 to $12,000</strong>. That doesn’t include the headstone, flowers, obituary notices, or the pastor’s honorarium. Many families are blindsided, maxing out credit cards or draining savings just to cover the basics.</p>
-    <p><em>One widow told us she had to take out a loan against her home just to bury her husband. That’s not the kind of memory you want to leave behind.</em></p>
-
-    <figure>
-      <img src="3.png" alt="Casket costs">
-      <figcaption>Costs add up quickly — even the basics can overwhelm a family.</figcaption>
+    <figure class="hero">
+      <!-- Your main hero image (can be same as screenshot) -->
+      <img src="1.png" alt="Families planning final expenses" />
     </figure>
 
-    <h2 class="section" id="reason2">2) Grief + Debt = Family Chaos</h2>
-    <p>If you’ve ever seen what happens to a family when money is on the line, you know the truth: <strong>funerals bring out fights.</strong></p>
-    <ul class="check">
-      <li>Brothers and sisters stop speaking.</li>
-      <li>Some push for cremation because it’s cheaper.</li>
-      <li>Others feel guilty and insist on a proper burial.</li>
-    </ul>
-    <p class="pullquote">Coverage eliminates all of that. It means there’s money in place — instantly — so your family can grieve in peace, not argue over bills.</p>
+    <p class="lede">
+      Most Americans don’t realize it — but the greatest financial burden their family will ever face may come the very moment they pass away. Funeral homes don’t wait. Cemeteries don’t wait. Hospitals don’t wait. The bills come due instantly — at the exact time when your loved ones are at their weakest.
+    </p>
 
-    <h2 class="section" id="reason3">3) You Don’t Have to Be Rich or Perfectly Healthy</h2>
-    <p>Traditional life insurance can be a nightmare. Health exams. Blood tests. Weeks of waiting.</p>
-    <p><strong>Final Expense Coverage is different.</strong> Most Americans over 50 qualify instantly — even with health conditions. It’s quick, simple, and you’ll know your options in minutes just by calling.</p>
+    <p>That’s why Final Expense Coverage exists. It’s not about “insurance” in the traditional sense. It’s about giving your family dignity, relief, and breathing room when they’ll need it most.</p>
 
-    <div class="inline-img">
-      <img src="4.png" alt="Licensed representative on the phone">
-    </div>
-
-    <h2 class="section" id="reason4">4) Leave Something Behind That Matters</h2>
-    <p>Imagine your kids gathering after you’re gone. Do you want them passing around envelopes of debt… or receiving a check that gives them stability?</p>
-    <p>This program doesn’t just pay for funeral costs. It can also cover unpaid medical bills, leftover credit cards, and even leave extra money behind for your loved ones. <strong>That’s the kind of legacy that lasts.</strong></p>
-
-    <h2 class="section" id="reason5">5) The Window May Be Closing Faster Than You Think</h2>
-    <p>Here’s what most seniors don’t know: programs like this can change overnight. Costs can rise. States can tighten eligibility. Or the program may vanish entirely.</p>
-    <p>We’ve seen too many families regret waiting “just a little longer.” By then it was too late.</p>
-
-    <!-- Mid CTA -->
+    <!-- Clean center CTA like the reference -->
     <div class="cta">
-      <a href="tel:+13214858035" class="btn">📞 CALL (321) 485-8035</a>
-      <small>In minutes, see what you qualify for — up to $25,000 in coverage</small>
-      <span class="timer" id="t2">3:00</span>
+      <a class="btn" href="tel:+13214858035">📞 Call (321) 485-8035</a>
+      <div class="note">Free, no-obligation consultation with a licensed specialist.</div>
     </div>
 
-    <h2 class="section">✅ Take Action Now</h2>
-    <p>If you’re over 50, you can call today and speak directly with a licensed representative. In just a few minutes, they’ll walk you through what you qualify for — up to $25,000 in coverage.</p>
+    <section class="reasons">
 
-    <h2 class="section">📞 Call Now to Protect Your Family</h2>
-    <p><strong>Don’t wait until it’s too late.</strong> One phone call is all it takes to spare your loved ones from bills, debt, and painful decisions. The coverage you secure today could be the greatest gift you ever leave behind.</p>
+      <!-- Reason 1 -->
+      <div class="reason" id="r1">
+        <h3>1) Funerals Aren’t Just Expensive… They’re Crushing</h3>
+        <div class="rimg"><img src="1.png" alt="Funeral costs illustration"></div>
+        <p>The average funeral now costs <strong>$9,000–$12,000</strong>. That doesn’t include the headstone, flowers, obituary notices, or the pastor’s honorarium. Many families are blindsided, maxing out credit cards or draining savings just to cover the basics.</p>
+        <p class="pull">One widow told us she had to take out a loan against her home just to bury her husband. That’s not the kind of memory you want to leave behind.</p>
+      </div>
 
-    <div class="inline-img">
-      <img src="5.png" alt="Family peace of mind">
-    </div>
+      <!-- Reason 2 -->
+      <div class="reason" id="r2">
+        <h3>2) Grief + Debt = Family Chaos</h3>
+        <div class="rimg"><img src="2.png" alt="Family disagreements"></div>
+        <p>When money is on the line, funerals can bring out fights. Some push for cremation because it’s cheaper; others feel guilty and insist on a proper burial. Coverage eliminates all of that — funds are there <em>instantly</em> so your family can grieve in peace, not argue over bills.</p>
+      </div>
 
-    <!-- Bottom CTA -->
+      <!-- Reason 3 -->
+      <div class="reason" id="r3">
+        <h3>3) You Don’t Have to Be Rich or Perfectly Healthy</h3>
+        <div class="rimg"><img src="3.png" alt="Easy qualification"></div>
+        <p>Traditional life insurance can be a slog: health exams, blood tests, weeks of waiting. Final Expense Coverage is different. Most Americans over 50 qualify quickly — even with existing conditions. It’s simple, and you’ll know your options in minutes.</p>
+      </div>
+
+      <!-- Reason 4 -->
+      <div class="reason" id="r4">
+        <h3>4) Leave Something Behind That Matters</h3>
+        <div class="rimg"><img src="4.png" alt="Leave a legacy"></div>
+        <p>Do you want your kids passing around envelopes of debt — or receiving a check that gives them stability? This coverage can address funeral costs, unpaid medical bills, leftover credit cards, and even leave a little extra behind.</p>
+      </div>
+
+      <!-- Reason 5 -->
+      <div class="reason" id="r5">
+        <h3>5) The Window May Be Closing Faster Than You Think</h3>
+        <div class="rimg"><img src="5.png" alt="Time sensitive"></div>
+        <p>Programs like this can change. Costs rise. States tighten eligibility. Don’t wait “a little longer” only to find out it’s too late. A short call today locks in what you qualify for.</p>
+      </div>
+    </section>
+
+    <!-- CTA again (like reference repeats) -->
     <div class="cta">
-      <a href="tel:+13214858035" class="btn">📞 Tap To Call & See Options</a>
-      <small>Free, No-Obligation Help — Available Now</small>
-      <span class="timer" id="t3">3:00</span>
+      <a class="btn" href="tel:+13214858035">📞 Call (321) 485-8035</a>
+      <div class="note">Licensed representatives are standing by to help.</div>
     </div>
+
+    <hr class="rule" />
+
+    <p class="note" style="text-align:center">
+      Beware of similar-looking sites; we are not affiliated with them. This is the only official PolicyBenefits.org page.
+    </p>
+
+    <!-- Spacer for the sticky bar on mobile -->
+    <div class="spacer"></div>
   </article>
 
-  <!-- Sticky bottom call -->
-  <div class="sticky">
-    <a href="tel:+13214858035" id="stickyCTA">📞 Call (321) 485-8035 — Speak to a Licensed Rep</a>
+  <!-- Sticky bottom CTA (mobile like many advertorials) -->
+  <div class="sticky-cta">
+    <a class="btn" href="tel:+13214858035">📞 Tap to Call Now</a>
   </div>
-</main>
 
-<footer>
-  <div class="foot">
-    Beware of other fraudulent & similar-looking websites that might look exactly like ours, we have no affiliation with them.
-    This is the only official website to claim your Final Expense Coverage Help with the domain name <strong>policybenefits.org</strong>.
-  </div>
-</footer>
-
-<script>
-  // ---- Config (edit once) ----
-  const CALL_NUMBER = "(321) 485-8035";
-
-  // Today date
-  (function(){
-    const el = document.getElementById("today");
-    const d = new Date();
-    const opt = { year:"numeric", month:"long", day:"numeric" };
-    if(el) el.textContent = d.toLocaleDateString(undefined,opt);
-  })();
-
-  // Enrollment count ticker
-  (function(){
-    const el = document.getElementById("enrollment-count");
-    let count = 22578;
-    const fmt = n => n.toLocaleString();
-    function tick(){
-      count += Math.floor(Math.random()*3)+1;
-      if(el) el.textContent = fmt(count);
-    }
-    setInterval(tick, 3000);
-  })();
-
-  // Countdown timers
-  function startCountdown(id, seconds){
-    const el = document.getElementById(id);
-    if(!el) return;
-    let t = seconds;
-    const fmt = (n)=>`${Math.floor(n/60)}:${(n%60<10?"0":"")}${n%60}`;
-    el.textContent = fmt(t);
-    const it = setInterval(()=>{
-      t--; el.textContent = fmt(Math.max(t,0));
-      if(t<=0){ clearInterval(it); el.textContent = "Time Expired"; }
-    },1000);
-  }
-  startCountdown("t1", 420);
-  startCountdown("t2", 420);
-  startCountdown("t3", 420);
-
-  // Reading progress
-  (function(){
-    const bar = document.getElementById("progress");
-    const onScroll = ()=>{
-      const doc = document.documentElement;
-      const scrolled = doc.scrollTop || document.body.scrollTop;
-      const height = doc.scrollHeight - doc.clientHeight;
-      const pct = Math.max(0, Math.min(1, scrolled / height));
-      bar.style.width = (pct*100).toFixed(2) + "%";
-    };
-    document.addEventListener("scroll", onScroll, {passive:true});
-    onScroll();
-  })();
-
-  // Ensure all visible CTAs show the current phone (if you change CALL_NUMBER)
-  (function syncPhone(){
-    document.querySelectorAll("#topCallBtn, #stickyCTA, .btn").forEach(btn=>{
-      btn.innerHTML = btn.innerHTML.replace(/\(\d{3}\)\s?\d{3}[-\s]?\d{4}/g, CALL_NUMBER);
-    });
-  })();
-</script>
+  <script>
+    // Light "enrolled" ticker to mimic the reference feel
+    const enrolled = document.getElementById('enrolled');
+    let n = 22231;
+    const fmt = (x)=> x.toLocaleString();
+    setInterval(()=>{ n += Math.floor(Math.random()*3)+1; enrolled.textContent = fmt(n); }, 3000);
+  </script>
 </body>
 </html>
