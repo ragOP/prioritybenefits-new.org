@@ -6,6 +6,11 @@
     
       },
       {
+        "source": "/engp1",
+        "destination": "/pancake.html"
+    
+      },
+      {
         "source": "/englf3",
         "destination": "/englf3.html"
     
