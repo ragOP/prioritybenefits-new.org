@@ -12,8 +12,8 @@
       --ink:#111;
       --muted:#555;
       --rule:#e6e6e6;
-      --cta:#0aa34f;
-      --cta-dark:#088341;
+      --cta:#00b050;
+      --cta-dark:#009246;
       --max: 760px;
       --hi:#fff4a3; /* soft yellow highlight */
     }
@@ -85,13 +85,11 @@
       padding: clamp(14px, 3vw, 22px);
     }
 
-    /* Title + yellow highlight just for "Top 5 Reasons" */
     h1{
       font-size: clamp(28px, 5.2vw, 42px);
       line-height: 1.2;
       margin: 20px 0 14px;
       font-weight: 700;
-      text-align: left;
     }
     .mark{
       background: var(--hi);
@@ -138,21 +136,25 @@
       border:1px solid var(--rule);
       border-radius: 14px;
     }
+
+    /* === Unified glowing call button === */
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       gap:10px; text-decoration:none; font-weight:700;
       background: var(--cta); color:#fff; border-radius: 12px;
       padding: 16px 22px; font-size: 18px;
       font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-      box-shadow: 0 6px 18px rgba(10,163,79,.22);
-      transition: transform .06s ease, background .2s ease;
-      will-change: transform, background;
+      box-shadow: 0 0 12px 4px rgba(0,176,80,0.6);
+      transition: transform .06s ease, background .2s ease, box-shadow .25s ease;
+      will-change: transform, background, box-shadow;
+    }
+    .btn:hover{ 
+      background: var(--cta-dark); 
+      box-shadow: 0 0 18px 6px rgba(0,176,80,0.8);
     }
     .btn:active{ transform: translateY(1px); }
-    .btn:hover{ background: var(--cta-dark); }
 
     .note{
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
       color:#666; font-size: 13px; margin-top:12px;
     }
 
@@ -179,13 +181,11 @@
       color:#333; font-style: italic; margin: 18px 0;
     }
 
-    /* Sticky CTA (hidden by default; shows after #r2 enters view) */
+    /* Sticky CTA */
     .sticky-cta{
       position: fixed; left:0; right:0; bottom:0; z-index: 50;
       background:#fff; border-top: 1px solid var(--rule);
       padding: 12px 14px;
-
-      /* hidden state */
       transform: translateY(100%);
       opacity: 0;
       visibility: hidden;
@@ -207,17 +207,16 @@
     }
   </style>
 </head>
-<script src="https://b-js.ringba.com/CAfdb7eb5bdaa24fb8a155f293ece397ae" async></script>
 <body>
 
-  <!-- ====== Header + LIVE Sub-Banner (matched to earlier page) ====== -->
-  <header class="banner" role="banner" aria-label="Site Header">
+  <!-- ====== Header ====== -->
+  <header class="banner">
     <div class="logo">
       <img src="bur.png" alt="Final Expense Coverage - PolicyBenefits.org" />
     </div>
   </header>
 
-  <div class="sub-banner" aria-live="polite">
+  <div class="sub-banner">
       <img style="width: 10%; margin-right: 5px;" src="./live.png" alt="" />
     <em><strong id="enrollment-count">22,578</strong> People Enrolled In Last 24 Hours!</em>
   </div>
@@ -243,39 +242,36 @@
       <div class="reason" id="r1">
         <h2>1. Funerals Cost Much More Than We Think...</h2>
         <div class="rimg"><img src="1.png" alt="Funeral costs illustration"></div>
-        <p>The average funeral now costs <strong>$9,000–$12,000</strong>. That doesn’t include the headstone, flowers, obituary notices, or the pastor’s honorarium. Many families are blindsided, maxing out credit cards or draining savings just to cover the basics.</p>
-        <p class="pull">One widow told us she had to take out a loan against her home just to bury her husband. That’s not the kind of memory you want to leave behind.</p>
+        <p>The average funeral now costs <strong>$9,000–$12,000</strong>. That doesn’t include the headstone, flowers, obituary notices, or the pastor’s honorarium.</p>
       </div>
 
       <div class="reason" id="r2">
         <h2>2. Grief + Debt = Family Chaos</h2>
         <div class="rimg"><img src="2.png" alt="Family disagreements"></div>
-        <p>When money is on the line, funerals can bring out fights. Some push for cremation because it’s cheaper; others feel guilty and insist on a proper burial. Coverage eliminates all of that — funds are there <em>instantly</em> so your family can grieve in peace, not argue over bills.</p>
+        <p>When money is on the line, funerals can bring out fights. Coverage eliminates all of that — funds are there instantly so your family can grieve in peace.</p>
       </div>
 
       <div class="reason" id="r3">
-        <hr>
         <h2>3. You Don’t Have to Be Rich or Perfectly Healthy</h2>
         <div class="rimg"><img src="3.png" alt="Easy qualification"></div>
-        <p>Traditional life insurance can be a slog: health exams, blood tests, weeks of waiting. Final Expense Coverage is different. Most Americans over 50 qualify quickly — even with existing conditions. It’s simple, and you’ll know your options in minutes.</p>
+        <p>Most Americans over 50 qualify quickly — even with existing conditions. It’s simple, and you’ll know your options in minutes.</p>
       </div>
 
       <div class="reason" id="r4">
         <h2>4. Leave Something Behind That Matters</h2>
         <div class="rimg"><img src="4.png" alt="Leave a legacy"></div>
-        <p>Do you want your kids passing around envelopes of debt — or receiving a check that gives them stability? This coverage can address funeral costs, unpaid medical bills, leftover credit cards, and even leave a little extra behind.</p>
+        <p>This coverage can address funeral costs, unpaid medical bills, leftover credit cards, and even leave a little extra behind.</p>
       </div>
 
       <div class="reason" id="r5">
         <h2>5. The Window May Be Closing Faster Than You Think</h2>
         <div class="rimg"><img src="5.png" alt="Time sensitive"></div>
-        <p>Programs like this can change. Costs rise. States tighten eligibility. Don’t wait “a little longer” only to find out it’s too late. A short call today locks in what you qualify for.</p>
+        <p>Programs like this can change. Costs rise. Don’t wait only to find out it’s too late.</p>
       </div>
     </section>
 
     <div class="cta">
-      <a class="btn" href="tel:+13214858035
-">📞 Call (321) 485-8035</a>
+      <a class="btn" href="tel:+13214858035">📞 Call (321) 485-8035</a>
       <div class="note">Licensed representatives are standing by to help.</div>
     </div>
 
@@ -288,14 +284,13 @@
     <div class="spacer"></div>
   </article>
 
-  <!-- Sticky CTA: initially hidden; appears after #r2 intersects -->
+  <!-- Sticky CTA -->
   <div class="sticky-cta" id="stickyCta">
-    <a class="btn" href="tel:+13214858035
-">📞 Tap to Call Now</a>
+    <a class="btn" href="tel:+13214858035">📞 Tap to Call Now</a>
   </div>
 
   <script>
-    // ===== Sticky CTA appears after Reason #2 enters view =====
+    // Sticky CTA
     (function(){
       const target = document.querySelector('#r2');
       const bar = document.getElementById('stickyCta');
@@ -311,29 +306,21 @@
             }
           }
         });
-      }, { root:null, threshold:0.4, rootMargin:'0px 0px -20% 0px' });
+      }, { threshold:0.4, rootMargin:'0px 0px -20% 0px' });
 
       io.observe(target);
     })();
 
-    // ===== LIVE enrollment counter (same feel as earlier page) =====
+    // Enrollment counter
     (function(){
       const el = document.getElementById('enrollment-count');
       if (!el) return;
-
-      // start from the number shown
-      let current = Number(String(el.textContent).replace(/,/g, '')) || 22578;
-
+      let current = Number(el.textContent.replace(/,/g,'')) || 22578;
       function fmt(n){ return n.toLocaleString('en-US'); }
-
-      function tick(){
-        // small random bump each 3 seconds
-        const inc = Math.floor(Math.random() * 3) + 1; // 1–3
-        current += inc;
+      setInterval(()=>{
+        current += Math.floor(Math.random()*3)+1;
         el.textContent = fmt(current);
-      }
-
-      setInterval(tick, 3000);
+      },3000);
     })();
   </script>
 </body>
