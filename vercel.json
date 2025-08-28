@@ -106,6 +106,10 @@
       {
         "source": "engtrk",
         "destination": "/newest.html"
+      },
+      {
+        "source": "/new-path",
+        "destination": "/tue.html"
       }
     ]
   }
