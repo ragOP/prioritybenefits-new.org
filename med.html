@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>$25,000 Funeral Benefit Coverage — Eligibility</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0e14" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0a0b10;
+      --panel:rgba(255,255,255,.05);
+      --line:rgba(255,255,255,.12);
+      --muted:#a9b4c7;
+      --accent:#e50914;   /* red */
+      --accent2:#5dd6ff;  /* cyan */
+      --ok:#17c964;
+      --bad:#ff4d4f;
+      --gold:#ffd36a;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
+      color:#e8edf6;
+      background:
+        radial-gradient(1200px 600px at 80% -10%, rgba(229,9,20,.15), transparent 40%),
+        radial-gradient(900px 400px at 10% 0%, rgba(93,214,255,.12), transparent 35%),
+        linear-gradient(180deg, #0b0e14 0%, #08090f 100%);
+      background-color:var(--bg);
+    }
+
+    a{color:#9ad7ff} a:hover{text-decoration:underline}
+    .container{width:min(1100px, 94vw); margin:0 auto; padding:20px}
+    .badge{
+      display:inline-flex; gap:8px; align-items:center; padding:6px 12px;
+      border-radius:999px; background:linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.06));
+      border:1px solid var(--line); color:#cfe0ff; font-size:12px; letter-spacing:.12em; text-transform:uppercase;
+    }
+    .hero{
+      padding:56px 0 20px;
+      display:grid; gap:22px;
+    }
+    .headline{
+      font-weight:800; font-size: clamp(30px, 5.4vw, 48px); line-height:1.05; margin:8px 0 6px;
+      text-shadow: 0 0 40px rgba(229,9,20,.35);
+    }
+    .sub{
+      font-size: clamp(14px, 2.4vw, 18px); color:#cdd6e8;
+    }
+    .enrolled{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+      padding:10px 12px; border-radius:12px; background:rgba(0,0,0,.25); border:1px dashed var(--line);
+      color:#dce6ff; font-weight:600;
+    }
+    .enrolled b{color:#fff}
+    .grid{
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:20px; align-items:start;
+    }
+    @media (max-width: 900px){ .grid{ grid-template-columns: 1fr } }
+
+    .card{
+      background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:16px;
+      box-shadow: 0 30px 70px rgba(0,0,0,.45);
+    }
+    .card h2{ margin:6px 0 8px; font-size:22px }
+    .label{ color:var(--muted); font-size:13px }
+
+    .step{
+      margin-top:12px; display:grid; gap:12px;
+    }
+
+    .btn{
+      appearance:none; border:1px solid var(--line); background:rgba(255,255,255,.06);
+      color:#e8edf6; font-weight:800; border-radius:14px; padding:14px 16px; cursor:pointer;
+      transition:transform .06s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+      width:100%; text-align:left;
+    }
+    .btn:hover{ transform:translateY(-1px) }
+    .btn-primary{
+      background:linear-gradient(180deg, #e50914, #b50812); border-color:transparent; color:#fff; text-align:center;
+    }
+    .btn-ghost{ background:rgba(255,255,255,.06) }
+
+    .choices{ display:grid; gap:10px }
+    .choice{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      padding:12px 14px; border-radius:12px; border:1px solid var(--line);
+      background:rgba(255,255,255,.06); cursor:pointer;
+    }
+    .choice:hover{ background:rgba(255,255,255,.09) }
+    .choice input{ display:none }
+    .choice .age{ font-weight:800 }
+    .pill{ font-size:12px; color:#cfe0ff; background:rgba(255,255,255,.06); border:1px solid var(--line); padding:4px 8px; border-radius:999px }
+
+    .progress{
+      margin:10px 0; height:10px; border-radius:999px; background:rgba(255,255,255,.08); overflow:hidden; border:1px solid var(--line)
+    }
+    .bar{ height:100%; width:0%; background:linear-gradient(90deg, var(--accent2), #2eaad6) }
+
+    .aside{
+      position:sticky; top:16px; display:grid; gap:12px
+    }
+    .stat{
+      display:flex; align-items:center; justify-content:space-between; gap:10px; padding:10px 12px; border:1px solid var(--line);
+      border-radius:12px; background:rgba(255,255,255,.06)
+    }
+
+    .timer{
+      display:flex; align-items:center; gap:12px; padding:10px 12px; border-radius:12px;
+      background:rgba(0,0,0,.35); border:1px solid var(--line);
+    }
+    .ring{ width:48px; height:48px; position:relative }
+    .ring svg{ transform:rotate(-90deg) }
+    .ring .tl{ position:absolute; inset:0; display:grid; place-items:center; font-weight:800; font-size:12px }
+    .warn{ filter: drop-shadow(0 0 10px rgba(229,9,20,.6)) }
+
+    .callbox{
+      padding:14px; border:1px solid var(--line); border-radius:14px; background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04))
+    }
+    .callnum{
+      font-size:clamp(18px, 5vw, 22px); font-weight:800; letter-spacing:.02em;
+    }
+    .callbtn{
+      margin-top:10px; width:100%; text-align:center
+    }
+
+    .tick{ display:inline-flex; gap:8px; align-items:center; color:#cfe0ff }
+    .ok{ color:var(--ok) }
+
+    .foot{
+      margin:22px 0 60px; color:#cbd6eb; font-size:13px
+    }
+    .notice{
+      margin-top:12px; padding:10px 12px; border-radius:12px; border:1px dashed var(--line); background:rgba(0,0,0,.25);
+      color:#d4def6
+    }
+    .links{ margin-top:8px; display:flex; gap:12px; flex-wrap:wrap }
+
+    .center{ text-align:center }
+    .fade-in{ animation:fade .35s both }
+    @keyframes fade{ from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none} }
+
+    .check{
+      display:none; place-items:center; gap:12px; padding:14px; border-radius:12px; border:1px solid var(--line);
+      background:rgba(255,255,255,.06)
+    }
+    .spinner{
+      width:18px; height:18px; border:3px solid rgba(255,255,255,.25); border-top-color:#fff; border-radius:50%;
+      animation:spin .9s linear infinite
+    }
+    @keyframes spin{ to{ transform:rotate(360deg) } }
+
+    .success{
+      display:none; gap:10px; align-items:center; padding:12px; border:1px solid rgba(23,201,100,.4);
+      background:rgba(23,201,100,.12); color:#e9fff1; border-radius:12px
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <span class="badge">Final Expense Benefit</span>
+      <h1 class="headline">
+        Final Call For Seniors To Claim Their <span style="color:var(--accent2)">$25,000 Funeral Benefit Coverage</span>!
+      </h1>
+      <p class="sub">
+        Checking your eligibility is very simple and takes just 60 seconds — answer the quick questions below to see if you qualify now.
+      </p>
+      <div class="enrolled">
+        <span>📈 <b>22,578</b> Seniors Enrolled In Last 24 Hours!</span>
+        <span class="pill">Real-time demand</span>
+      </div>
+    </section>
+
+    <!-- MAIN GRID -->
+    <section class="grid">
+      <!-- LEFT: FORM -->
+      <div class="card fade-in" id="formCard" aria-live="polite">
+        <div class="label">Answer The Question Below To Proceed:</div>
+        <h2>What’s Your Age Range?</h2>
+
+        <div class="progress" aria-hidden="true"><div class="bar" id="bar"></div></div>
+
+        <div class="step" id="step1">
+          <label class="choice">
+            <input type="radio" name="age" value="50-65" />
+            <span class="age">50–65</span>
+            <span class="pill">Commonly eligible</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="age" value="65-80" />
+            <span class="age">65–80</span>
+            <span class="pill">Popular range</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="age" value="80+" />
+            <span class="age">80+</span>
+            <span class="pill">Limited slots</span>
+          </label>
+          <button id="nextBtn" class="btn btn-primary">Continue</button>
+        </div>
+
+        <!-- Checking -->
+        <div id="checking" class="check" role="status" aria-live="polite">
+          <div class="spinner" aria-hidden="true"></div>
+          <div>Checking eligibility… please wait</div>
+        </div>
+
+        <!-- Success -->
+        <div id="success" class="success">
+          <span class="ok">✔</span>
+          <span><b>Congratulations, You Qualify.</b> Make a quick call to claim your $25,000 benefit now.</span>
+        </div>
+
+        <!-- Call to action -->
+        <div id="claim" style="display:none; margin-top:12px">
+          <div class="callbox">
+            <div class="tick"><span>🎯</span> Spots remaining: <b id="spots">4</b></div>
+            <div class="timer" style="margin-top:10px">
+              <div class="ring">
+                <svg width="48" height="48" aria-hidden="true">
+                  <circle cx="24" cy="24" r="19" stroke="rgba(255,255,255,.2)" stroke-width="5" fill="none"/>
+                  <circle id="ring" cx="24" cy="24" r="19" stroke="#fff" stroke-width="5" stroke-linecap="round" fill="none"
+                    stroke-dasharray="119.38" stroke-dashoffset="0"/>
+                </svg>
+                <div class="tl"><span id="mm">3</span>:<span id="ss">00</span></div>
+              </div>
+              <div>
+                <div class="label">Due to high call volume, your official agent is waiting for only 3 minutes, then your spot will not be reserved.</div>
+              </div>
+            </div>
+            <div class="callnum center" style="margin-top:10px">CALL <a href="tel:+13214858035">(321) 485-8035</a></div>
+            <button class="btn btn-primary callbtn" onclick="window.location.href='tel:+13214858035'">Call Now & Claim Benefit</button>
+          </div>
+          <div style="margin-top:10px; color:#d7e2fb; font-size:13px">69 People Are Claiming Right Now!</div>
+        </div>
+      </div>
+
+      <!-- RIGHT: ASIDE INFO -->
+      <aside class="aside">
+        <div class="card">
+          <h2 class="center" style="margin:6px 0 12px">Why People Call</h2>
+          <div class="stat"><span>✅ Fast eligibility check</span><span class="pill">~60s</span></div>
+          <div class="stat"><span>✅ No lengthy forms</span><span class="pill">Phone support</span></div>
+          <div class="stat"><span>✅ Seniors-first support</span><span class="pill">Priority</span></div>
+        </div>
+
+        <div class="card">
+          <h2 style="margin:6px 0 8px">Your Reservation</h2>
+          <div class="label">Hold your place while you call</div>
+          <div class="stat"><span>Queue Status</span><span id="queue" class="pill">Active</span></div>
+          <div class="stat"><span>Reservation Timer</span><span id="rlabel" class="pill">3:00</span></div>
+        </div>
+
+        <div class="card">
+          <h2 style="margin:6px 0 8px">Security Notice</h2>
+          <div class="label">
+            Beware of other fraudulent & similar-looking websites that might look exactly like ours; we have no affiliation with them.
+            This is the only official website to claim your Final Expense Benefit with the domain name <b>policybenefits.org</b>.
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="foot">
+      <div class="links">
+        <a href="/terms" id="termsLink">Terms &amp; Conditions</a>
+        <a href="/privacy" id="privacyLink">Privacy Policy</a>
+      </div>
+      <div class="notice">
+        This is a marketing landing page for information purposes. Eligibility and coverage subject to provider terms and verification.
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function(){
+      // Progress bar
+      const bar = document.getElementById('bar');
+      function setProgress(pct){ bar.style.width = Math.max(0, Math.min(100, pct)) + '%'; }
+      setProgress(20);
+
+      // Step handling
+      const step1 = document.getElementById('step1');
+      const nextBtn = document.getElementById('nextBtn');
+      const checking = document.getElementById('checking');
+      const success = document.getElementById('success');
+      const claim = document.getElementById('claim');
+
+      nextBtn.addEventListener('click', ()=>{
+        const selected = step1.querySelector('input[name="age"]:checked');
+        if (!selected){
+          nextBtn.textContent = 'Please select an option';
+          nextBtn.style.background = 'linear-gradient(180deg, #ffd36a, #d4aa3a)';
+          setTimeout(()=>{
+            nextBtn.textContent = 'Continue';
+            nextBtn.classList.add('btn-primary');
+          }, 900);
+          return;
+        }
+        setProgress(60);
+        step1.style.display='none';
+        checking.style.display='grid';
+
+        // fake verification ~1.5s
+        setTimeout(()=>{
+          checking.style.display='none';
+          success.style.display='flex';
+          claim.style.display='block';
+          setProgress(100);
+          startHoldTimer(); // begin 3-min reservation
+        }, 1500);
+      });
+
+      // Timer (3:00 hold)
+      const ring = document.getElementById('ring');
+      const mm = document.getElementById('mm');
+      const ss = document.getElementById('ss');
+      const rlabel = document.getElementById('rlabel');
+      const CIRC = 2*Math.PI*19;
+      let remaining = 180; // seconds
+      let tInt = null;
+
+      function renderTimer(){
+        const m = Math.floor(remaining/60);
+        const s = remaining%60;
+        mm.textContent = m.toString();
+        ss.textContent = s.toString().padStart(2,'0');
+        rlabel.textContent = `${m}:${s.toString().padStart(2,'0')}`;
+        if (remaining <= 30) ring.classList.add('warn');
+        const ratio = remaining/180;
+        ring.style.strokeDasharray = CIRC.toFixed(2);
+        ring.style.strokeDashoffset = ((1-ratio)*CIRC).toFixed(2);
+      }
+      function startHoldTimer(){
+        renderTimer();
+        if (tInt) clearInterval(tInt);
+        tInt = setInterval(()=>{
+          remaining = Math.max(0, remaining-1);
+          renderTimer();
+          if (remaining === 0){
+            clearInterval(tInt);
+            document.getElementById('queue').textContent = 'Expired';
+            document.getElementById('spots').textContent = '0';
+          }
+        }, 1000);
+      }
+
+      // Dynamic links (match source page structure if deployed under a path)
+      // If you want exact URLs from source, set them here:
+      document.getElementById('termsLink').href = "/englf1#terms";
+      document.getElementById('privacyLink').href = "/englf1#privacy";
+
+      // Simulate “live” viewers ticker
+      const liveLine = document.querySelector('#claim + div');
+      let viewers = 69;
+      function jiggle(){
+        if (!liveLine) return;
+        const delta = Math.random() < .6 ? 0 : (Math.random() < .5 ? 1 : -1);
+        viewers = Math.max(40, Math.min(120, viewers + delta));
+        liveLine.textContent = viewers + " People Are Claiming Right Now!";
+      }
+      setInterval(jiggle, 2500);
+    })();
+  </script>
+</body>
+</html>
