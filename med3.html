@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>$25,000 Benefit – Quick Eligibility</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin:0; font-family:Inter, sans-serif;
+      background: linear-gradient(135deg,#eaf6ff,#fff);
+      color:#222; height:100vh; display:flex; justify-content:center; align-items:center;
+    }
+    .chatbox {
+      width:100%; max-width:420px; height:90vh; background:#fff;
+      border-radius:20px; box-shadow:0 12px 40px rgba(0,0,0,.15);
+      display:flex; flex-direction:column; overflow:hidden;
+    }
+    .header {
+      background:#1a73e8; color:#fff; padding:14px; font-weight:700; text-align:center;
+    }
+    .messages {
+      flex:1; padding:14px; overflow-y:auto; display:flex; flex-direction:column; gap:12px;
+    }
+    .msg {
+      max-width:80%; padding:12px 14px; border-radius:14px; font-size:15px; line-height:1.4;
+    }
+    .bot { background:#f0f4ff; align-self:flex-start; }
+    .user { background:#1a73e8; color:#fff; align-self:flex-end; }
+    .options { display:flex; flex-direction:column; gap:8px; }
+    .btn {
+      border:none; padding:12px; border-radius:12px;
+      font-weight:600; cursor:pointer; transition:.2s; text-align:left;
+    }
+    .btn:hover { background:#eaf2ff; }
+    .footer {
+      padding:12px; border-top:1px solid #eee; text-align:center; font-size:13px; color:#666;
+    }
+    .cta {
+      background:#ff6b5a; color:#fff; font-weight:700; border:none; padding:14px;
+      border-radius:12px; cursor:pointer; width:100%; margin-top:12px;
+    }
+    .cta:hover { background:#e25545; }
+  </style>
+</head>
+<body>
+  <div class="chatbox">
+    <div class="header">💬 Benefit Assistant</div>
+    <div class="messages" id="messages">
+      <div class="msg bot">Hi 👋 I can quickly check if you qualify for the <b>$25,000 Funeral Benefit</b>.</div>
+      <div class="msg bot">First, may I know your <b>age range</b>?</div>
+      <div class="options" id="step1">
+        <button class="btn" onclick="answer('50–65')">50–65</button>
+        <button class="btn" onclick="answer('65–80')">65–80</button>
+        <button class="btn" onclick="answer('80+')">80+</button>
+      </div>
+    </div>
+    <div class="footer">✔ Secure • Licensed Agents • No Medical Exam</div>
+  </div>
+
+  <script>
+    const messages=document.getElementById("messages");
+    function addMsg(text,cls="bot"){ const d=document.createElement("div"); d.className="msg "+cls; d.innerHTML=text; messages.appendChild(d); messages.scrollTop=messages.scrollHeight; }
+    function answer(val){
+      // remove buttons
+      document.getElementById("step1").remove();
+      addMsg(val,"user");
+      setTimeout(()=>addMsg("Thanks! And what’s your ZIP Code?"),800);
+      setTimeout(()=>{
+        const opts=document.createElement("div"); opts.className="options"; opts.id="step2";
+        opts.innerHTML=`<input id="zip" placeholder="Enter ZIP" style="padding:12px;border:1px solid #ccc;border-radius:10px;width:100%;margin-bottom:8px">
+        <button class="cta" onclick="checkZip()">Check Eligibility</button>`;
+        messages.appendChild(opts); messages.scrollTop=messages.scrollHeight;
+      },1400);
+    }
+    function checkZip(){
+      const zip=document.getElementById("zip").value.trim();
+      if(!zip){alert("Enter ZIP");return;}
+      document.getElementById("step2").remove();
+      addMsg(zip,"user");
+      setTimeout(()=>addMsg("Checking eligibility for "+zip+"… ⏳"),800);
+      setTimeout(()=>{
+        addMsg("🎉 Great news! You qualify for the <b>$25,000 Benefit</b>.");
+        addMsg("👉 To secure it now, please call <b>(321) 485-8035</b> within the next 3 minutes.");
+        const callBtn=document.createElement("button"); callBtn.className="cta"; callBtn.textContent="📞 Call Now & Claim"; callBtn.onclick=()=>window.location.href='tel:+13214858035';
+        messages.appendChild(callBtn);
+        messages.scrollTop=messages.scrollHeight;
+      },1800);
+    }
+  </script>
+</body>
+</html>
