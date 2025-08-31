@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Notice of Eligibility — $25,000 Funeral Benefit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { margin:0; font-family:"Times New Roman", serif; background:#f9f9f9; color:#111; padding:40px; }
+    .notice {
+      max-width:800px; margin:auto; background:#fff; padding:40px;
+      border:2px solid #000; box-shadow:0 4px 16px rgba(0,0,0,.15);
+    }
+    .header { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
+    .seal { font-weight:900; font-size:20px; }
+    .title { text-align:center; font-size:22px; font-weight:700; margin:20px 0; text-transform:uppercase; }
+    .body p { font-size:16px; line-height:1.6; margin:14px 0; }
+    .highlight { font-weight:700; color:#b22222; }
+    .cta {
+      display:block; width:100%; margin:20px 0; text-align:center;
+      background:#000; color:#fff; font-size:18px; font-weight:700; padding:14px;
+      text-decoration:none; border:2px solid #000;
+    }
+    .cta:hover { background:#333; }
+    .exp { font-size:16px; font-weight:700; color:#b22222; margin-top:10px; text-align:center; }
+    .footer {
+      margin-top:40px; font-size:13px; color:#333; border-top:1px solid #ccc; padding-top:12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="notice">
+    <div class="header">
+      <div class="seal">⚖ UNITED STATES BENEFIT OFFICE</div>
+      <div class="date">DATE: <b>Feb 28, 2025</b></div>
+    </div>
+
+    <div class="title">Notice of Eligibility</div>
+
+    <div class="body">
+      <p>Dear Citizen,</p>
+      <p>You may be entitled to receive a <span class="highlight">$25,000 Funeral Benefit</span> to cover final expenses. This benefit has been authorized for distribution to qualified seniors nationwide.</p>
+      <p>Our records indicate that you may be eligible. To confirm, please complete a short verification process immediately.</p>
+
+      <p><b>Action Required:</b> Contact a licensed agent before your reservation expires. Failure to act before the expiration date may result in forfeiture of benefits.</p>
+
+      <a href="tel:+13214858035" class="cta">📞 CALL (321) 485-8035 TO CONFIRM ELIGIBILITY</a>
+      <div class="exp">⚠ Reservation Expires in: 3 Minutes</div>
+
+      <p>By contacting the number above, you will be connected with a licensed representative who can confirm your details and secure your $25,000 coverage.</p>
+    </div>
+
+    <div class="footer">
+      This document is an official eligibility notice. Distribution is limited.  
+      © 2025 United States Benefit Office. All Rights Reserved.
+    </div>
+  </div>
+
+  <script>
+    let remaining=180; const exp=document.querySelector('.exp');
+    setInterval(()=>{
+      remaining=Math.max(0,remaining-1);
+      const m=Math.floor(remaining/60), s=remaining%60;
+      exp.textContent="⚠ Reservation Expires in: "+m+":"+String(s).padStart(2,"0");
+      if(!remaining) exp.textContent="❌ Reservation Expired";
+    },1000);
+  </script>
+</body>
+</html>
