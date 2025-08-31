@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Eligibility Intake Form — $25,000 Funeral Benefit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin:0; font-family:Roboto, sans-serif;
+      background:#f6f9fb; color:#222;
+      display:flex; justify-content:center; align-items:center;
+      min-height:100vh; padding:20px;
+    }
+    .form {
+      width:100%; max-width:600px;
+      background:#fff; border:2px solid #ccd9e0;
+      border-radius:8px; box-shadow:0 6px 24px rgba(0,0,0,.1);
+      padding:24px; position:relative;
+    }
+    .form h1 {
+      text-align:center; font-size:24px; color:#0f3d73; margin-bottom:8px;
+    }
+    .sub {
+      text-align:center; font-size:15px; color:#555; margin-bottom:20px;
+    }
+    .section { margin-bottom:20px; }
+    .section label { font-weight:500; display:block; margin-bottom:6px; }
+    .option {
+      border:1px solid #ccc; border-radius:6px; padding:12px;
+      margin-bottom:8px; cursor:pointer; transition:.2s;
+    }
+    .option:hover { border-color:#0f3d73; background:#f2f7ff; }
+    .btn {
+      display:block; width:100%; border:none;
+      background:#0f3d73; color:#fff;
+      padding:14px; border-radius:6px; font-size:16px; font-weight:600;
+      cursor:pointer; margin-top:10px;
+    }
+    .btn:hover { background:#0c305c; }
+    .status {
+      display:none; text-align:center; margin-top:14px; font-weight:600;
+      color:#0f3d73;
+    }
+    .timer {
+      display:none; text-align:center; margin-top:18px;
+      font-weight:700; font-size:16px; color:#c0392b;
+    }
+    .footer {
+      margin-top:24px; font-size:12px; color:#777; text-align:center;
+      border-top:1px dashed #ccc; padding-top:12px;
+    }
+    .signature {
+      margin-top:20px; text-align:center; font-style:italic; color:#666;
+    }
+  </style>
+</head>
+<body>
+  <div class="form">
+    <h1>Eligibility Intake Form</h1>
+    <div class="sub">Reviewing your information for <b>$25,000 Funeral Benefit Coverage</b></div>
+
+    <div class="section" id="step1">
+      <label>Patient Age Range</label>
+      <div class="option" onclick="chooseAge('50–65')">50–65</div>
+      <div class="option" onclick="chooseAge('65–80')">65–80</div>
+      <div class="option" onclick="chooseAge('80+')">80+</div>
+    </div>
+
+    <div class="section" id="step2" style="display:none">
+      <label>Residential ZIP Code</label>
+      <input type="text" id="zip" placeholder="Enter ZIP" maxlength="5"
+             style="padding:12px;border:1px solid #ccc;border-radius:6px;width:100%">
+      <button class="btn" onclick="submitZip()">Submit for Review</button>
+    </div>
+
+    <div id="status" class="status">🩺 Reviewing your file…</div>
+    <div id="timer" class="timer">Reservation Expires in: <span id="count">3:00</span></div>
+
+    <div id="result" style="display:none; text-align:center; margin-top:20px;">
+      <h2 style="color:#2bb673;">✔ Approved</h2>
+      <p>You qualify for the $25,000 Funeral Benefit. Please call now to finalize your file:</p>
+      <p style="font-size:20px; font-weight:700; color:#0f3d73">📞 (321) 485-8035</p>
+      <button class="btn" onclick="window.location.href='tel:+13214858035'">Call Now</button>
+    </div>
+
+    <div class="signature">Patient Acknowledgment: By calling, you consent to eligibility verification.</div>
+    <div class="footer">Confidential • Licensed Agents • HIPAA Safe</div>
+  </div>
+
+  <script>
+    const step1=document.getElementById('step1');
+    const step2=document.getElementById('step2');
+    const status=document.getElementById('status');
+    const timer=document.getElementById('timer');
+    const result=document.getElementById('result');
+    const count=document.getElementById('count');
+
+    function chooseAge(val){
+      step1.style.display="none";
+      step2.style.display="block";
+    }
+    function submitZip(){
+      const zip=document.getElementById('zip').value.trim();
+      if(!zip){alert("Enter ZIP");return;}
+      step2.style.display="none";
+      status.style.display="block";
+      setTimeout(()=>{
+        status.style.display="none";
+        result.style.display="block";
+        timer.style.display="block";
+        startTimer();
+      },1500);
+    }
+    let remaining=180,interval;
+    function startTimer(){
+      interval=setInterval(()=>{
+        remaining=Math.max(0,remaining-1);
+        const m=Math.floor(remaining/60), s=remaining%60;
+        count.textContent=m+":"+String(s).padStart(2,'0');
+        if(!remaining){clearInterval(interval); timer.textContent="Reservation Expired ❌";}
+      },1000);
+    }
+  </script>
+</body>
+</html>
